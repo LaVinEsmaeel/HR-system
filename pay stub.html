@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>All Pay Stubs | Employee Dashboard</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f2f2f2;
+  color: #222;
+}
+
+.top-header {
+  background: #0e244c;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.wrapper {
+  padding: 25px;
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 19px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: #0e2859;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.icon-btn:hover {
+  color: #153d8a;
+}
+
+.content-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  max-width: 850px;
+}
+
+h3 {
+  margin-top: 0;
+  color: #0e2859;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.table th {
+  background: #f7f7f7;
+  text-align: left;
+}
+
+.table tr:hover {
+  background: #f9f9f9;
+}
+
+.view-link {
+  color: #0b5ed7;
+  text-decoration: none;
+}
+
+.view-link:hover {
+  text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-header">Qaiwan International University</div>
+
+<div class="wrapper">
+  <div class="page-title">
+    <button class="icon-btn" onclick="window.location.href='payinfo.html'">
+      <i class="fa-solid fa-arrow-left"></i>
+    </button>
+    All Pay Stubs
+  </div>
+
+  <div class="content-card">
+    <h3>Employee Pay History</h3>
+    <table class="table">
+      <tr>
+        <th>Date</th>
+        <th>Pay Period</th>
+        <th>Gross Pay</th>
+        <th>Deductions</th>
+        <th>Net Pay</th>
+        <th>View</th>
+      </tr>
+      <tr>
+        <td>July 8, 2026</td>
+        <td>06/25 - 07/08</td>
+        <td>$1,350.00</td>
+        <td>$100.00</td>
+        <td><strong>$1,250.00</strong></td>
+        <td><a href="#" class="view-link">View</a></td>
+      </tr>
+      <tr>
+        <td>June 24, 2026</td>
+        <td>06/10 - 06/24</td>
+        <td>$1,300.00</td>
+        <td>$95.00</td>
+        <td><strong>$1,205.00</strong></td>
+        <td><a href="#" class="view-link">View</a></td>
+      </tr>
+      <tr>
+        <td>June 10, 2026</td>
+        <td>05/25 - 06/10</td>
+        <td>$1,320.00</td>
+        <td>$100.00</td>
+        <td><strong>$1,220.00</strong></td>
+        <td><a href="#" class="view-link">View</a></td>
+      </tr>
+      <tr>
+        <td>May 24, 2026</td>
+        <td>05/10 - 05/24</td>
+        <td>$1,300.00</td>
+        <td>$85.00</td>
+        <td><strong>$1,215.00</strong></td>
+        <td><a href="#" class="view-link">View</a></td>
+      </tr>
+      <tr>
+        <td>May 10, 2026</td>
+        <td>04/25 - 05/10</td>
+        <td>$1,250.00</td>
+        <td>$90.00</td>
+        <td><strong>$1,160.00</strong></td>
+        <td><a href="#" class="view-link">View</a></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Employee Dashboard</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f2f2f2;
+  color: #222;
+}
+
+.top-header {
+  background: #0e244c;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.wrapper {
+  padding: 25px;
+}
+
+.page-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 19px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.main-content {
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.profile-row {
+  display: flex;
+  padding: 20px;
+  border-bottom: 1px solid #c5c5c5;
+  align-items: center;
+}
+
+.profile-photo img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  margin-right: 19px;
+}
+
+.profile-btn {
+  background: #0e2859;
+  color: white;
+  text-decoration: none;  
+  padding: 7px 19px;
+  font-size: 13px;
+  display: inline-block;
+}
+
+.leave-balance {
+  padding: 20px;
+  border-bottom: 1px solid #d5d5d5;
+}
+
+.leave-boxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 11px;
+  margin-top: 13px;
+}
+
+.leave-box {
+  background: #f7f7f7;
+  padding: 10px;
+  font-size: 13px;
+  position: relative;
+}
+
+.leave-box span {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: #7cb342;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.accordion {
+  border-top: 1px solid #ddd;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-header {
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.accordion-header a {
+  color: #0e2859;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+}
+
+.accordion-header a:hover {
+  text-decoration: underline;
+}
+
+.accordion-content {
+  padding: 12px 16px;
+  font-size: 13px;
+}
+
+.pay-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.pay-links a {
+  margin-right: 15px;
+  color: #0b5ed7;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.side-panel {
+  background: #fff;
+  border: 1px solid #ddd;
+  height: fit-content;
+}
+
+.side-header {
+  padding: 10px;
+  font-weight: bold;
+  background: #f7f7f7;
+  border-bottom: 1px solid #ddd;
+}
+
+.primary-btn {
+  margin: 10px;
+  background: #0b5ed7;
+  color: white;
+  border: none;
+  width: calc(100% - 20px);
+  padding: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: #0a4ab3;
+}
+
+.side-links {
+  padding: 10px;
+}
+
+.side-links a {
+  display: block;
+  padding: 6px 0;
+  font-size: 13px;
+  color: #0b5ed7;
+  text-decoration: none;
+}
+.side-links a:hover {
+  text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-header">
+  Qaiwan International University
+</div>
+
+<div class="wrapper">
+  <div class="page-title">Employee Dashboard</div>
+
+  <div class="layout">
+
+    <div class="main-content">
+
+      <div class="profile-row">
+        <div class="profile-photo">
+          <img src="employe.jpg" alt="Employee Photo">
+        </div>
+        <div class="profile-info">
+         <a href="profile.html" class="profile-btn">My Profile</a>
+        </div>
+      </div>
+
+      <div class="leave-balance">
+        <strong>Leave Balances as of 07/15/2026</strong>
+        <div class="leave-boxes">
+          <div class="leave-box">Vacation Leave <span>142.08$</span></div>
+          <div class="leave-box">Sick Leave <span>1,040.00$</span></div>
+          <div class="leave-box">Holidays <span>96.00$</span></div>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <a href="payinfo.html">Pay Information</a>
+            <i class="fa-solid fa-chevron-up"></i>
+          </div>
+          <div class="accordion-content">
+            <div class="pay-row">
+              <strong>Latest Pay Stub:</strong> 07/08/2026
+              <div class="pay-links">
+                <a href="pay stub.html">All Pay Stubs</a>
+                <a href="direct deposit.html">Direct Deposit</a>
+                <a href="deductions.html">Deductions</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item"><div class="accordion-header"><a href="earnings.html">Earnings</a></div></div>
+        <div class="accordion-item"><div class="accordion-header"><a href="benefits.html">Benefits</a></div></div>
+        <div class="accordion-item"><div class="accordion-header"><a href="job-summary.html">Job Summary</a></div></div>
+        <div class="accordion-item"><div class="accordion-header"><a href="employee-summary.html">Employee Summary</a></div></div>
+      </div>
+
+    </div>
+    
+    <div class="side-panel">
+      <div class="side-header">
+        <i class="fa-solid fa-wrench"></i> My Activities
+      </div>
+      <button class="primary-btn" onclick="window.location.href='Leave Request Page.html'">Enter Leave Report</button>
+      <div class="side-links">
+        <a href="Leave approval Page .html">Approve Time</a>
+        <a href="Leave approval Page .html">Approve Leave Report</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
+
+
+

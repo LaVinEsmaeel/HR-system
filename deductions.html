@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Deductions | Employee Dashboard</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f2f2f2;
+  color: #222;
+}
+
+.top-header {
+  background: #0e244c;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.wrapper {
+  padding: 25px;
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 19px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: #0e2859;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.icon-btn:hover {
+  color: #153d8a;
+}
+
+.content-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  max-width: 750px;
+}
+
+h3 {
+  margin-top: 0;
+  color: #0e2859;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.table th {
+  background: #f7f7f7;
+  text-align: left;
+}
+
+.table tr:hover {
+  background: #f9f9f9;
+}
+
+.total {
+  font-weight: bold;
+  background: #f7f7f7;
+}
+
+.info-text {
+  font-size: 13px;
+  color: #444;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-header">Qaiwan International University</div>
+
+<div class="wrapper">
+  <div class="page-title">
+    <button class="icon-btn" onclick="window.location.href='payinfo.html'">
+      <i class="fa-solid fa-arrow-left"></i>
+    </button>
+    Deductions
+  </div>
+
+  <div class="content-card">
+    <h3>Monthly Deduction Summary</h3>
+
+    <table class="table">
+      <tr>
+        <th>Deduction Type</th>
+        <th>Amount ($)</th>
+        <th>Notes</th>
+      </tr>
+      <tr>
+        <td>Income Tax</td>
+        <td>45.00</td>
+        <td>Federal tax deduction</td>
+      </tr>
+      <tr>
+        <td>Social Security</td>
+        <td>25.00</td>
+        <td>Employee contribution</td>
+      </tr>
+      <tr>
+        <td>Health Insurance</td>
+        <td>20.00</td>
+        <td>Medical coverage plan</td>
+      </tr>
+      <tr>
+        <td>Retirement Plan</td>
+        <td>10.00</td>
+        <td>Voluntary 401(k) contribution</td>
+      </tr>
+      <tr class="total">
+        <td>Total Deductions</td>
+        <td>$100.00</td>
+        <td>Automatically subtracted from gross pay</td>
+      </tr>
+    </table>
+
+    <p class="info-text">
+      These deductions are automatically calculated and deducted from your bi-weekly paycheck.  
+      For detailed tax or benefit inquiries, please contact the HR or Payroll department.
+    </p>
+  </div>
+</div>
+
+</body>
+</html>

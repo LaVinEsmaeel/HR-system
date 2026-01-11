@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Employees | QIU HR</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Inter, sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  color: #1f2937;
+}
+
+/* ===== Header ===== */
+.header {
+  background: #0e244c;
+  padding: 20px 30px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.header h1 {
+  font-size: 20px;
+}
+
+.header .back-link {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.header .back-link:hover {
+  text-decoration: underline;
+}
+
+/* ===== Container ===== */
+.container {
+  padding: 30px;
+}
+
+/* ===== Card ===== */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ===== Card Header ===== */
+.card-header h2 {
+  font-size: 18px;
+  color: #0e244c;
+  margin-bottom: 12px; /* space between title and search bar */
+}
+
+/* ===== Search Bar ===== */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #f1f3f5;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  margin-bottom: 20px; /* spacing below search bar */
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  margin-left: 8px;
+  width: 100%;
+}
+
+.search-bar input::placeholder {
+  color: #94a3b8;
+}
+
+/* ===== Table ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th {
+  text-align: left;
+  font-size: 13px;
+  color: #475569;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 10px;
+}
+
+td {
+  padding: 12px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+tr:hover {
+  background: #eef0ff;
+}
+
+.status-active {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.status-leave {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+/* ===== Footer Note ===== */
+.note {
+  margin-top: 15px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+@media (max-width: 768px) {
+  .search-bar input { width: 100%; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== Top Header ===== -->
+<div class="header">
+  <a href="HR Dashboard.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a>
+</div>
+
+<!-- ===== Content ===== -->
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h2>All Employees – Qaiwan International University</h2>
+      <!-- Search bar moved below title -->
+      <div class="search-bar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="employeeSearch" placeholder="Search by name, department, position">
+      </div>
+    </div>
+
+    <table id="employeeTable">
+      <tr>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Position</th>
+        <th>Status</th>
+      </tr>
+
+      <tr><td>Sara Omar</td><td>Software Engineering</td><td>Lecturer</td><td class="status-active">Active</td></tr>
+      <tr><td>Hassan Karim</td><td>Business Administration</td><td>Administrator</td><td class="status-leave">On Leave</td></tr>
+      <tr><td>Mabel Lee</td><td>PAP</td><td>Coordinator</td><td class="status-active">Active</td></tr>
+      <tr><td>Ahmed Salim</td><td>Dentistry</td><td>Assistant Professor</td><td class="status-active">Active</td></tr>
+      <tr><td>Rana Abdullah</td><td>Accounting</td><td>Lecturer</td><td class="status-active">Active</td></tr>
+      <tr><td>Yara Fadel</td><td>Health and Science</td><td>Teaching Assistant</td><td class="status-active">Active</td></tr>
+      <tr><td>Ali Kareem</td><td>Software Engineering</td><td>Lecturer</td><td class="status-active">Active</td></tr>
+      <tr><td>Zainab Ahmed</td><td>Dentistry</td><td>Lecturer</td><td class="status-active">Active</td></tr>
+      <tr><td>Qais Ali</td><td>PAP</td><td>Supervisor</td><td class="status-active">Active</td></tr>
+    </table>
+
+    <div class="note">
+      Total employees displayed: 9
+    </div>
+  </div>
+</div>
+
+<script>
+// ===== Real-time search filter =====
+const searchInput = document.getElementById('employeeSearch');
+searchInput.addEventListener('keyup', function() {
+  const filter = searchInput.value.toLowerCase();
+  const table = document.getElementById('employeeTable');
+  const rows = table.getElementsByTagName('tr');
+
+  for (let i = 1; i < rows.length; i++) { // skip header row
+    const cells = rows[i].getElementsByTagName('td');
+    let match = false;
+    for (let j = 0; j < cells.length - 1; j++) { // ignore status column
+      if (cells[j].innerText.toLowerCase().includes(filter)) {
+        match = true;
+        break;
+      }
+    }
+    rows[i].style.display = match ? '' : 'none';
+  }
+});
+</script>
+
+</body>
+</html>
+
+
+

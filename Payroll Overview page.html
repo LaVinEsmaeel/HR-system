@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Payroll Overview | QIU</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Inter, sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  display: flex;
+  height: 100vh;
+  color: #1f2937;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 260px;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 20px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 14px;
+  color: #0e244c;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.profile-box {
+  background: #eef4ff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-box img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile-box h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0e244c;
+}
+
+.profile-box span {
+  font-size: 12px;
+  color: #475569;
+}
+
+.menu li {
+  list-style: none;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.menu a {
+  color: #334155;             /* text color */
+  text-decoration: none;      /* remove underline */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  font-size: 14px;
+  width: 100%;                /* full clickable area */
+  transition: background 0.2s, color 0.2s;
+}
+
+.menu a:hover {
+  background: #eef0ff;
+  color: #0e244c;
+}
+
+.menu li.active a {
+  background: #eef0ff;
+  color: #0e244c;
+  font-weight: 600;
+}
+
+.menu li:last-child a {
+  color: #dc2626;            /* logout red */
+}
+
+/* ===== Main ===== */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Topbar ===== */
+.topbar {
+  background: #0e244c;
+  padding: 15px 30px;
+}
+
+.topbar h1 {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* ===== Content ===== */
+.content {
+  padding: 30px;
+}
+
+.header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* ===== Cards ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.card h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #475569;
+}
+
+.card p {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 8px;
+  color: #0e244c;
+}
+
+/* ===== Table ===== */
+.table-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  font-size: 13px;
+  color: #475569;
+  padding-bottom: 12px;
+}
+
+td {
+  padding: 14px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.status {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.paid {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.pending {
+  background: #fff7ed;
+  color: #c2410c;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="logo">QAIWAN INTERNATIONAL<br>UNIVERSITY</div>
+
+  <div class="profile-box">
+    <img src="manager.png" alt="HR Manager">
+    <h4>HR Manager</h4>
+    <span>Human Resources</span>
+  </div>
+
+  <ul class="menu">
+    <li><a href="HR Dashboard.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+    <li><a href="Employe Dashboard.html"><i class="fa-solid fa-users"></i> Employees</a></li>
+    <li><a href="Leave Request Page.html"><i class="fa-solid fa-calendar-check"></i> Leave Approvals</a></li>
+    <li class="active"><a href="Payroll Overview page.html"><i class="fa-solid fa-money-check-dollar"></i> Payroll</a></li>
+    <li><a href="reports.html"><i class="fa-solid fa-file-lines"></i> Reports</a></li>
+    <li><a href="Settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+    <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+  </ul>
+</div>
+
+<div class="main">
+  <div class="topbar">
+    <h1>Payroll Overview</h1>
+  </div>
+
+  <div class="content">
+    <div class="header">
+      <h2>Monthly Payroll Summary</h2>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Total Payroll</h3>
+        <p>$125,000</p>
+      </div>
+      <div class="card">
+        <h3>Employees Paid</h3>
+        <p>220</p>
+      </div>
+      <div class="card">
+        <h3>Pending Payments</h3>
+        <p>15</p>
+      </div>
+      <div class="card">
+        <h3>Deductions</h3>
+        <p>$8,500</p>
+      </div>
+    </div>
+
+    <div class="table-card">
+      <h3 style="margin-bottom:15px;">Employee Payroll Status</h3>
+      <table>
+        <tr>
+          <th>Employee</th>
+          <th>Department</th>
+          <th>Month</th>
+          <th>Amount</th>
+          <th>Status</th>
+        </tr>
+
+        <tr>
+          <td>Sara Omar</td>
+          <td>Software Engineering</td>
+          <td>September</td>
+          <td>$1,200</td>
+          <td><span class="status paid">Paid</span></td>
+        </tr>
+
+        <tr>
+          <td>Hassan Karim</td>
+          <td>Business</td>
+          <td>September</td>
+          <td>$1,100</td>
+          <td><span class="status pending">Pending</span></td>
+        </tr>
+
+        <tr>
+          <td>Mabel Lee</td>
+          <td>Marketing</td>
+          <td>September</td>
+          <td>$1,000</td>
+          <td><span class="status paid">Paid</span></td>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+

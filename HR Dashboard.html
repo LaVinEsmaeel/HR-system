@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HR Dashboard | QIU</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Inter, sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  display: flex;
+  min-height: 100vh;
+  color: #1f2937;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 260px;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 14px;
+  color: #0e244c;
+  margin-bottom: 30px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.profile-box {
+  background: #eef4ff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-box img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile-box h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0e244c;
+}
+
+.profile-box span {
+  font-size: 12px;
+  color: #475569;
+}
+
+.menu {
+  flex: 1;
+}
+
+.menu li {
+  list-style: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #334155;
+  margin-bottom: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Make the entire li clickable */
+.menu li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+}
+
+.menu li.active,
+.menu li:hover {
+  background: #eef0ff;
+  color: #0e244c;
+}
+
+.menu li.logout {
+  margin-top: auto;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 12px;
+  color: #dc2626;
+}
+
+/* ===== Main ===== */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Topbar ===== */
+.topbar {
+  background: #0e244c;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar h1 {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.15);
+  padding: 8px 15px;
+  border-radius: 6px;
+}
+
+.search-bar input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  margin-left: 8px;
+}
+
+.search-bar input::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+/* ===== Content ===== */
+.content {
+  padding: 30px;
+  overflow-y: auto;
+}
+
+.header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* ===== Cards ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.card h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #475569;
+}
+
+.card p {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 8px;
+  color: #0e244c;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-link .card {
+  cursor: pointer;
+}
+
+/* ===== Sections ===== */
+.sections {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 22px;
+}
+
+/* ===== Table ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  font-size: 13px;
+  color: #475569;
+  padding-bottom: 10px;
+}
+
+td {
+  padding: 12px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+tr:hover {
+  background: #eef0ff;
+}
+
+.status.active { color: #10b981; font-weight: 600; }
+.status.leave { color: #f59e0b; font-weight: 600; }
+
+/* ===== Notices ===== */
+.notice {
+  background: #fffbe6;
+  padding: 18px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border-left: 5px solid #facc15;
+  transition: box-shadow 0.3s;
+}
+
+.notice:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.notice h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.notice p {
+  font-size: 13px;
+  color: #374151;
+}
+
+@media (max-width: 900px) {
+  .sidebar { width: 60px; padding: 10px; }
+  .sidebar .logo, .profile-box h4, .profile-box span { display: none; }
+  .main { margin-left: 60px; }
+  .menu li { font-size: 12px; padding: 10px; }
+  .cards { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+}
+
+@media (max-width: 600px) {
+  .sections { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+<div class="sidebar">
+  <div class="logo">QAIWAN INTERNATIONAL<br>UNIVERSITY</div>
+
+  <div class="profile-box">
+    <img src="manager.png" alt="HR Manager">
+    <h4>HR Manager</h4>
+    <span>Human Resources</span>
+  </div>
+
+  <ul class="menu">
+    <li class="active"><a href="dashboard.html"><i class="fa-solid fa-chart-pie"></i> HR Dashboard</a></li>
+    <li><a href="Employe Dashboard.html"><i class="fa-solid fa-users"></i> Employees</a></li>
+    <li><a href="Departments.html"><i class="fa-solid fa-building"></i> Departments</a></li>
+    <li><a href="Leave Request Page.html"><i class="fa-solid fa-calendar-check"></i> Leave Requests</a></li>
+    <li><a href="Leave approval Page .html"><i class="fa-solid fa-check-circle"></i> Approvals</a></li>
+    <li><a href="Recruitment.html"><i class="fa-solid fa-briefcase"></i> Recruitment</a></li>
+    <li><a href="reports.html"><i class="fa-solid fa-file-lines"></i> Reports</a></li>
+    <li><a href="Settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+    <li class="logout"><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+  </ul>
+</div>
+
+<div class="main">
+  <div class="topbar">
+    <h1>HR Dashboard</h1>
+    <div class="search-bar">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search employees, departments">
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="header">
+      <h2>Welcome, HR Manager !</h2>
+    </div>
+
+    <div class="cards">
+      <a href="employees.html" class="card-link">
+        <div class="card">
+          <h3>Total Employees</h3>
+          <p>9</p>
+        </div>
+      </a>
+
+      <a href="departments.html" class="card-link">
+        <div class="card">
+          <h3>Departments</h3>
+          <p>6</p>
+        </div>
+      </a>
+
+      <a href="pending_requests.html" class="card-link">
+        <div class="card">
+          <h3>Pending Requests</h3>
+          <p>4</p>
+        </div>
+      </a>
+
+      <a href="open_positions.html" class="card-link">
+        <div class="card">
+          <h3>Open Positions</h3>
+          <p>4</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="sections">
+      <div class="card">
+        <h3>Recent Employees</h3>
+        <table>
+          <tr><th>Name</th><th>Department</th><th>Status</th></tr>
+          <tr><td>Sara Omar</td><td>Software Engineering</td><td><span class="status active">Active</span></td></tr>
+          <tr><td>Hassan Karim</td><td>Business</td><td><span class="status leave">On Leave</span></td></tr>
+          <tr><td>Mabel Lee</td><td>PAP</td><td><span class="status active">Active</span></td></tr>
+        </table>
+      </div>
+
+      <div>
+        <div class="notice">
+          <h4>HR Announcement</h4>
+          <p>Annual staff evaluation begins next week.</p>
+        </div>
+
+        <div class="notice">
+          <h4>Recruitment Update</h4>
+          <p>New lecturer position approved for Software Engineering.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+

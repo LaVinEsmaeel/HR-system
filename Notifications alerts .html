@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Notifications | QIU</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Inter, sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  display: flex;
+  height: 100vh;
+  color: #1f2937;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 260px;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 20px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 14px;
+  color: #0e244c;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+.profile-box {
+  background: #eef4ff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-box img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile-box h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0e244c;
+}
+
+.profile-box span {
+  font-size: 12px;
+  color: #475569;
+}
+
+.menu li {
+  list-style: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+.menu li.active,
+.menu li:hover {
+  background: #eef0ff;
+  color: #0e244c;
+}
+
+/* ===== Main ===== */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Topbar ===== */
+.topbar {
+  background: #0e244c;
+  padding: 15px 30px;
+}
+
+.topbar h1 {
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* ===== Content ===== */
+.content {
+  padding: 30px;
+}
+
+.header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* ===== Card ===== */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  max-width: 800px;
+}
+
+/* ===== Notification Item ===== */
+.notification {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.notification.unread {
+  background: #eef4ff;
+}
+
+.notification i {
+  font-size: 18px;
+  color: #0e244c;
+  margin-top: 4px;
+}
+
+.notification-content h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.notification-content p {
+  font-size: 13px;
+  color: #475569;
+}
+
+.notification-content span {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+/* ===== Badge ===== */
+.badge {
+  background: #dc2626;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-left: 6px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="logo">QAIWAN INTERNATIONAL<br>UNIVERSITY</div>
+
+  <div class="profile-box">
+    <img src="sarah.png">
+    <h4>Sarah Ali</h4>
+    <span>Employee</span>
+  </div>
+
+  <ul class="menu">
+    <li><i class="fa-solid fa-chart-line"></i> Dashboard</li>
+    <li><i class="fa-solid fa-address-book"></i> Directory</li>
+    <li><i class="fa-solid fa-calendar-days"></i> Leave Request</li>
+    <li class="active"><i class="fa-solid fa-bell"></i> Notifications
+      <span class="badge">3</span>
+    </li>
+    <li><i class="fa-solid fa-file-lines"></i> Reports</li>
+    <li><i class="fa-solid fa-gear"></i> Settings</li>
+    <li style="margin-top:25px;color:#dc2626">
+      <i class="fa-solid fa-right-from-bracket"></i> Logout
+    </li>
+  </ul>
+</div>
+
+<div class="main">
+  <div class="topbar">
+    <h1>Notifications</h1>
+  </div>
+
+  <div class="content">
+    <div class="header">
+      <h2>Recent Alerts</h2>
+    </div>
+
+    <div class="card">
+
+      <div class="notification unread">
+        <i class="fa-solid fa-circle-check"></i>
+        <div class="notification-content">
+          <h4>Leave Approved</h4>
+          <p>Your annual leave request has been approved.</p>
+          <span>2 hours ago</span>
+        </div>
+      </div>
+
+      <div class="notification unread">
+        <i class="fa-solid fa-circle-xmark"></i>
+        <div class="notification-content">
+          <h4>Leave Rejected</h4>
+          <p>Your sick leave request was rejected by HR.</p>
+          <span>1 day ago</span>
+        </div>
+      </div>
+
+      <div class="notification">
+        <i class="fa-solid fa-bullhorn"></i>
+        <div class="notification-content">
+          <h4>HR Announcement</h4>
+          <p>Staff meeting scheduled on Monday at 10 AM.</p>
+          <span>3 days ago</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

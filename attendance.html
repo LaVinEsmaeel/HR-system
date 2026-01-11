@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Monthly Attendance Report | QIU</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ===== SAME BASE STYLE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Inter, sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  display: flex;
+  min-height: 100vh;
+  color: #1f2937;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 260px;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 14px;
+  color: #0e244c;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.profile-box {
+  background: #eef4ff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-box img {
+  width: 70px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.menu li {
+  list-style: none;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+
+.menu li a {
+  display: flex;
+  gap: 12px;
+  text-decoration: none;
+  color: #334155;
+}
+
+.menu li.active,
+.menu li:hover {
+  background: #eef0ff;
+  color: #0e244c;
+}
+
+.menu li.logout {
+  margin-top: auto;
+  border-top: 1px solid #e5e7eb;
+  color: #dc2626;
+}
+
+/* ===== Main ===== */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  background: #0e244c;
+  padding: 15px 30px;
+}
+
+.topbar h1 {
+  color: white;
+  font-size: 20px;
+}
+
+/* ===== Content ===== */
+.content {
+  padding: 30px;
+}
+
+.report-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+/* ===== Table ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th {
+  text-align: left;
+  font-size: 13px;
+  color: #475569;
+  padding-bottom: 10px;
+}
+
+td {
+  padding: 12px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+tr:hover {
+  background: #eef0ff;
+}
+
+.status-active {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.status-leave {
+  color: #f59e0b;
+  font-weight: 600;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+  <div class="logo">QAIWAN INTERNATIONAL<br>UNIVERSITY</div>
+
+  <div class="profile-box">
+    <img src="manager.png">
+    <h4>HR Manager</h4>
+    <span>Human Resources</span>
+  </div>
+
+  <ul class="menu">
+    <li><a href="HR Dashboard.html"><i class="fa-solid fa-chart-pie"></i> Dashboard</a></li>
+    <li class="active"><a href="reports.html"><i class="fa-solid fa-file-lines"></i> Reports</a></li>
+    <li><a href="Settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+    <li class="logout"><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+  </ul>
+</div>
+
+<div class="main">
+  <div class="topbar">
+    <h1>Monthly Attendance Report</h1>
+  </div>
+
+  <div class="content">
+    <div class="report-card">
+
+      <h3>Attendance Summary</h3>
+
+      <!-- TABLE -->
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Position</th>
+          <th>Status</th>
+        </tr>
+
+        <tr><td>Sara Omar</td><td>Software Engineering</td><td>Lecturer</td><td class="status-active">Active</td></tr>
+        <tr><td>Hassan Karim</td><td>Business Administration</td><td>Administrator</td><td class="status-leave">On Leave</td></tr>
+        <tr><td>Mabel Lee</td><td>PAP</td><td>Coordinator</td><td class="status-active">Active</td></tr>
+        <tr><td>Ahmed Salim</td><td>Dentistry</td><td>Assistant Professor</td><td class="status-active">Active</td></tr>
+        <tr><td>Rana Abdullah</td><td>Accounting</td><td>Lecturer</td><td class="status-active">Active</td></tr>
+        <tr><td>Yara Fadel</td><td>Health and Science</td><td>Teaching Assistant</td><td class="status-active">Active</td></tr>
+        <tr><td>Ali Kareem</td><td>Software Engineering</td><td>Lecturer</td><td class="status-active">Active</td></tr>
+        <tr><td>Zainab Ahmed</td><td>Dentistry</td><td>Lecturer</td><td class="status-active">Active</td></tr>
+        <tr><td>Qais Ali</td><td>PAP</td><td>Supervisor</td><td class="status-active">Active</td></tr>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

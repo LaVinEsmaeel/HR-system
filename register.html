@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Register Account</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f6fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .register-container {
+    background: white;
+    padding: 30px;
+    width: 360px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 12px rgba(0,0,0,0.12);
+    text-align: center;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+    color: #0e244c;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #0e244c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #1a5dc9;
+  }
+
+  .login-link {
+    margin-top: 15px;
+    font-size: 14px;
+  }
+
+  .login-link a {
+    color: #1a5dc9;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="register-container">
+  <h2>Create Account</h2>
+  <p>Use your university email to register</p>
+
+  <input type="text" placeholder="Full Name">
+  <input type="email" placeholder="University Email">
+  <input type="password" placeholder="Password">
+  <input type="password" placeholder="Confirm Password">
+
+  <button onclick="register()">Create Account</button>
+
+  <div class="login-link">
+    Already have an account?
+    <a href="login.html">Login</a>
+  </div>
+</div>
+
+<script>
+function register() {
+  alert(
+    "Registration successful!\n" +
+    "Please check your email to verify your account."
+  );
+}
+</script>
+
+</body>
+</html>

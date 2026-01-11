@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
+<style>
+  * {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  body {
+    margin: 0;
+    height: 100vh;
+    background-image: url("qiu.jpg"); /* put your image name here */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.bg-blur{
+   position: fixed; 
+   top: 0%;
+   left: 0%;
+   width:100%;
+   height: 100%;
+   background-image: url(qiu.jpg);
+   background-size: cover;
+   background-position: center;
+   filter: blur(3px);
+   opacity: 0.8;
+   z-index: -1;
+}
+ .login-container {
+  position: relative;
+  background: rgba(166, 166, 155, 0.08); /* very transparent box */
+  backdrop-filter: blur(6px);
+  padding: 30px;
+  width: 320px;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.logo {
+  position: fixed;
+  top: 0;
+  left: 69px;
+  width: 140px;
+  height: 170px;
+  background: #f0f5fb;
+  border-radius: 20px 20px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.logo img {
+  width: 90%;       
+  height: auto;
+  object-fit: contain;
+}
+
+h2 {
+  margin: 15px 0;
+  font-size: 20px;
+  font-family: 'Playfair Display', serif;
+  color: #0e244c;
+}
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+
+  .forgot {
+    display: block;
+    text-align: right;
+    font-size: 13px;
+    text-decoration: none;
+    margin-bottom: 12px;
+    color: #ffffff;
+  }
+.forgot:hover {
+  color: #9ec3ff;
+}
+  .login-btn {
+    width: 100%;
+    padding: 10px;
+    background: #0e244c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .login-btn:hover {
+    background: #1a5dc9;
+  }
+
+  .or {
+    margin: 15px 0;
+    font-size: 14px;
+    color: #ffffff;
+  }
+
+  .social-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .social-buttons button {
+    width: 48%;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+  }
+
+  .google {
+    background: #db4437;
+  }
+ .google:hover {
+    background: #e26e64;
+  }
+  .github {
+    background: #6d6767;
+  }
+.github:hover {
+    background: #b5b5b5;
+  }
+ .register {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #ffffffd2;
+}
+
+.register a {
+  color: #6fa1e2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.register a:hover {
+  color: #cedffa;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(22, 50, 80, 0.95);
+  font-size: 13px;
+  color: #ffffffcc;
+  z-index: 10;
+}
+
+.footer-line {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer a {
+  color: #6fa1e2;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #a0c4fe;
+}
+
+</style>
+</head>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<body>
+  <div class="bg-blur"></div>
+ <div class="logo">
+  <img src="qiu.png" alt="University Logo">
+</div>
+
+<div class="login-container">
+  
+
+  <h2>The University of Qaiwan</h2>
+
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Password">
+
+  <a href="forgot.html" class="forgot">
+  Forgot your password?
+</a>
+
+
+  <button class="login-btn" onclick="login()">Login</button>
+
+  <p class="or">or continue with</p>
+
+ <div class="social-buttons">
+  <button class="google" onclick="window.open('https://accounts.google.com/signin', '_blank')">
+    <i class="fa-brands fa-google"></i> Google
+  </button>
+  <button class="github" onclick="window.open('https://github.com/login', '_blank')">
+    <i class="fa-brands fa-github"></i> GitHub
+  </button>
+</div>
+
+
+
+  <p class="register">
+    Don’t have an account?
+   <a href="register.html"><strong>Register for free</strong></a>
+
+  </p>
+</div>
+<footer class="footer">
+  <div class="footer-line"></div>
+
+  <div class="footer-content">
+    <div class="footer-left">
+      <span>Follow Us On</span>
+
+      <a href="https://www.facebook.com/qaiwanuniversity"
+         target="_blank" rel="noopener">
+        <i class="fa-brands fa-facebook-f"></i> Facebook
+      </a>
+
+      <a href="https://www.instagram.com/qaiwanuniversity"
+         target="_blank" rel="noopener">
+        <i class="fa-brands fa-instagram"></i> Instagram
+      </a>
+    </div>
+
+    <div class="footer-right">
+      <span>+964 772 141 1414</span>
+      <span>|</span>
+      <span>info@uniq.edu.iq</span>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  function login() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    if (email === "" || password === "") {
+      alert("Please fill in all fields");
+    } else {
+      alert("Login clicked!\nEmail: " + email);
+    }
+  }
+</script>
+
+</body>
+</html>

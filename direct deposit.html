@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Direct Deposit | Employee Dashboard</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f2f2f2;
+  color: #222;
+}
+
+.top-header {
+  background: #0e244c;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.wrapper {
+  padding: 25px;
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 19px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: #0e2859;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.icon-btn:hover {
+  color: #153d8a;
+}
+
+.content-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  max-width: 750px;
+}
+
+h3 {
+  margin-top: 0;
+  color: #0e2859;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.table th {
+  background: #f7f7f7;
+  text-align: left;
+}
+
+.table tr:hover {
+  background: #f9f9f9;
+}
+
+.info-text {
+  font-size: 13px;
+  color: #444;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-header">Qaiwan International University</div>
+
+<div class="wrapper">
+  <div class="page-title">
+    <button class="icon-btn" onclick="window.location.href='payinfo.html'">
+      <i class="fa-solid fa-arrow-left"></i>
+    </button>
+    Direct Deposit
+  </div>
+
+  <div class="content-card">
+    <h3>Employee Bank Account Details</h3>
+    <table class="table">
+      <tr><th>Bank Name</th><td>Qaiwan National Bank</td></tr>
+      <tr><th>Account Holder</th><td>Employee Name</td></tr>
+      <tr><th>Account Number</th><td>**** **** **** 4567</td></tr>
+      <tr><th>Routing Number</th><td>987654321</td></tr>
+      <tr><th>Account Type</th><td>Checking</td></tr>
+      <tr><th>Deposit Frequency</th><td>Bi-Weekly</td></tr>
+      <tr><th>Last Deposit</th><td>July 8, 2026 – $1,250.00</td></tr>
+      <tr><th>Next Scheduled Deposit</th><td>July 22, 2026</td></tr>
+    </table>
+
+    <p class="info-text">
+      Your salary is automatically deposited into your registered bank account every two weeks.  
+      Please ensure your bank information remains up to date.  
+      To update your banking details, contact the HR department.
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
